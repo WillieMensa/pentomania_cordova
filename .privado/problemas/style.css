@@ -1,0 +1,247 @@
+/*
+	style.css
+	22/4/2019
+*/
+
+@font-face {
+    font-family: 'bangersregular';
+    src: url('bangers-regular-webfont.woff2') format('woff2'),
+         url('bangers-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'luckiest_guyregular';
+    src: url('luckiestguy-regular-webfont.woff2') format('woff2'),
+         url('luckiestguy-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'sriracharegular';
+    src: url('sriracha-regular-webfont.woff2') format('woff2'),
+         url('sriracha-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+		font-family: 'Carter One';
+		src: url('carter-one.woff2') format('woff2'),
+				 url('carter-one.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+}
+
+@font-face {
+		font-family: 'robotomedium';
+		src: url('roboto-medium-webfont.woff2') format('woff2'),
+				 url('roboto-medium-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+}
+
+
+/*
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+*/
+
+
+/*
+manejo con @media screen 
+	(trae problema con tamaños de objetos por eso anulo esta seccion???)
+*/
+@media screen and (min-width:1000px) {
+	body {
+		background-color: #006;	
+	}
+	button, input {
+		border-radius: 8px;
+		font-size: 1.4em;
+		line-height: 14px;
+		width: 120px;
+		height: 36px;
+		margin-top: 8px;
+	}
+}
+
+
+@media screen and (max-width:1000px) and (min-width:700px) {
+	body {
+		background-color: #0d0;
+	}
+	button, input {
+		border-radius: 6px;
+		font-size: 1.0em;
+		line-height: 10px;
+		width: 84px;
+		height: 25px;
+		margin-top: 6px;
+	}
+}
+
+
+@media screen and (max-width:700px) and (min-width:500px) {
+	body {
+		background-color: #0d0;
+	}
+	button, input {
+		border-radius: 4px;
+		font-size: 0.7em;
+		line-height: 7px;
+		width: 60px;
+		height: 18px;
+		margin-top: 4px;
+	}
+}
+
+
+@media screen and (max-width:500px)  and (min-width:400px) {
+	body {
+		background-color: #600;
+	}
+	button, input {
+		border-radius: 3px;
+		font-size: 0.56em;
+		line-height: 6px;
+		width: 48px;
+		height: 14px;
+		margin-top: 3px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	body {
+		background-color: #666;
+	}
+	button, input {
+		border-radius: 3px;
+		font-size: 0.56em;
+		line-height: 6px;
+		width: 48px;
+		height: 14px;
+		margin-top: 3px;
+	}
+
+}
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+h1 {
+    font-family: 'luckiest_guyregular';
+	font-size: 20px;
+
+}
+
+h2 {
+	font-family: 'sriracharegular', cursive;
+	font-size: 12px;
+
+}
+
+.auxiliar { fill:gray; stroke:#444;stroke-width:1;opacity:0.8; }
+
+.logo {
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+
+
+#levelButton {
+	margin-top: 20px;
+	width: 150px;
+	line-height: 80px;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 4 4px;
+	font-family: 'sriracharegular';
+	background: #cd4;
+	border: none;
+}
+
+/*
+input, label, select {
+	background: #ddeeff;
+	border-radius: 8px;
+	font-family: 'sriracharegular';
+	font-size: 16px;
+	text-align: right;
+	padding: 4px 4px;
+	color: #222244;
+	width: 120px;
+}
+
+
+*/
+
+#checkButton {
+	font-family: 'sriracharegular';
+	font-size: 1.6em;
+	width: 30px;
+}
+
+input, .checkbox, #check, #checkbox, #checkboxtext {
+	border: none;
+	font-family: 'sriracharegular';
+	font-size: 1.06em;
+	font-weight: normal;
+	/*	line-height: 10px;	*/
+	margin: 0px;
+	padding: 0 0px;
+	width: 200px;
+	visibility: hidden;
+}
+
+/*
+#container {
+	background: #9988ff;
+	border: 20;
+}
+
+#checkBtn {
+	background: #bbddff
+	border-radius: 8px;
+	font-size: 1.6em;
+	text-align: center;
+	padding: 4px 4px;
+	color: #112222;
+	width: 100px;
+}
+*/
+
+#verifica {
+	background: #669900;
+	font-family: 'sriracharegular';
+	font-size: 1.6em;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+button, input {
+	background: #669900;
+	border: none;
+	font-family: 'sriracharegular';
+	font-weight: bold;
+	padding: 0 0px;
+}
+
+#giraPieza, #volteaPieza {
+	font:  40px sriracharegular bold ;
+	line-height: 6px;
+
+}
+
+button:hover {
+  background: #ad1;
+}
+

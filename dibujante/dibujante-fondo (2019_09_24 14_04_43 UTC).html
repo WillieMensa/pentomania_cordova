@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Pentomania fondo caja</title>
+	<meta name="description" content="PENTOMANIA, un juego de lógica.">
+	<meta name="keywords" content="Lógica, Rompecabezas, representación gráfica, Desarrollo,Sistemas de Representación,CAD 3D, dibujo tecnico,elipses,empalmes,geometria descriptiva, ingenio, proyecciones, vistas">
+
+	<style>
+
+	button {
+		border-radius: 8px;
+		font-size: 1.2em;
+		line-height: 12px;
+		width: 120px;
+		height: 36px;
+		margin-top: 8px;
+	}
+
+	</style>
+
+</head>
+
+<body>
+
+<div class="container">
+	<!-- Contenido de la pagina -->
+	<a name="TopOfPage"></a>
+
+	<h1>Rompecabezas: Pentomania fondo caja</h1>
+	<hr>
+
+	<div>
+		<button onclick="printDiv(false)">Imprimir</button>
+
+		<p>&nbsp;</p>
+
+	</div>
+
+
+
+	<div class="imprimir" id="imprimir" style="background-color:#bdf" >
+
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width ="780" height= "1100"
+			id = "pagina">
+
+
+		<!-- viewBox tiene las medidas de un A4 vertical -->
+		<!-- Outline the SVG viewport. -->
+		<!-- Ojo! el texto SVG no admite caracteres acentuados -->
+
+
+		<style>
+
+		@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+		@import url("https://fonts.googleapis.com/css?family=Sriracha");
+
+
+		@media print {
+			/* Aquí irían tus reglas CSS específicas para imprimir */
+
+		} 
+
+		.trazo { fill:white; stroke:#333;stroke-width:2;opacity:1.0; }
+		.auxiliar { fill:white; stroke:#88f;stroke-width:1;opacity:1.0; }
+		.marco { fill:white; stroke:#808000;stroke-width:4mm;opacity:1.0; }
+
+		.title { font: bold 20px sans-serif; }
+		.heavy { font-family: "Luckiest Guy"; font-size: 40px; }
+
+
+		.imprimir{
+		background: white;
+		margin-right: 100px;
+		margin-left: 100px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		max-width: 790px;
+		}
+
+
+		</style>
+
+
+
+		<rect width="200mm" height="280mm" x="0"   y="0" fill="#fff"  stroke="#063" stroke-width="1" />
+
+
+
+		<g id="T2" transform="translate(75,25)">
+			<!-- y ahora el tablero -->
+			<!-- 
+				si quisiera un marco grueso...
+				<rect x="-2mm" y="-2mm" width="164mm" height="164mm" class='marco' /> -->
+
+			<!-- horizontales -->
+			<line x1="000" y1="000mm" x2="160mm" y2="000mm" class = 'trazo' />
+			<line x1="000" y1="020mm" x2="160mm" y2="020mm" class = 'trazo' />
+			<line x1="000" y1="040mm" x2="160mm" y2="040mm" class = 'trazo' />
+			<line x1="000" y1="060mm" x2="160mm" y2="060mm" class = 'trazo' />
+			<line x1="000" y1="080mm" x2="160mm" y2="080mm" class = 'trazo' />
+			<line x1="000" y1="100mm" x2="160mm" y2="100mm" class = 'trazo' />
+			<line x1="000" y1="120mm" x2="160mm" y2="120mm" class = 'trazo' />
+			<line x1="000" y1="140mm" x2="160mm" y2="140mm" class = 'trazo' />
+			<line x1="000" y1="160mm" x2="160mm" y2="160mm" class = 'trazo' />
+
+			<!-- verticales -->
+			<line x1="000mm" y1="0" x2="000mm" y2="160mm" class = 'trazo' />
+			<line x1="020mm" y1="0" x2="020mm" y2="160mm" class = 'trazo' />
+			<line x1="040mm" y1="0" x2="040mm" y2="160mm" class = 'trazo' />
+			<line x1="060mm" y1="0" x2="060mm" y2="160mm" class = 'trazo' />
+			<line x1="080mm" y1="0" x2="080mm" y2="160mm" class = 'trazo' />
+			<line x1="100mm" y1="0" x2="100mm" y2="160mm" class = 'trazo' />
+			<line x1="120mm" y1="0" x2="120mm" y2="160mm" class = 'trazo' />
+			<line x1="140mm" y1="0" x2="140mm" y2="160mm" class = 'trazo' />
+			<line x1="160mm" y1="0" x2="160mm" y2="160mm" class = 'trazo' />
+
+		</g>
+
+
+
+		</svg>
+
+
+	</div>
+
+
+
+
+	<!-- inicio de los scripts -->
+	<script type="text/javascript">
+
+		const	
+			//	DEBUG = false;
+			DEBUG = true;
+
+
+
+		function printDiv() {
+			var objeto=document.getElementById('imprimir');
+			//obtenemos el objeto a imprimir
+			var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
+			ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+			ventana.document.close();  //cerramos el documento
+			ventana.print();  //imprimimos la ventana
+			ventana.close();  //cerramos la ventana
+		}
+
+
+	</script>
+
+</div>
+
+</body>
+</html>
+

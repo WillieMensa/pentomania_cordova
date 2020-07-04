@@ -1,0 +1,66 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 790 1120"
+  id = "pagina">
+
+  <style>
+
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+    @import url("https://fonts.googleapis.com/css?family=Roboto:700");
+
+    .small { font-family: "Roboto"; font-size: 12px; }
+    .heavy { font-family: "Luckiest Guy"; font-size: 20px; }	<!-- fill: #888 } -->
+
+    .trazofino { fill:white; stroke:#33f;stroke-width:1;opacity:1.0; }
+    .auxiliar { fill:white; stroke:#888;stroke-width:1;opacity:0.5; }
+    .marco { fill:white; stroke:#566721; stroke-width:10; opacity:1.0; }
+
+    .normal { font-family: "Passion One"; font-size: 16px; }
+    .valor { font-family: "Luckiest Guy"; font-size: 24px; fill:#333; font: bold; dominant-baseline: central; text-anchor: middle;}
+
+    .title { font: bold 20px sans-serif; }
+
+  </style>
+
+
+  <!-- separador horizontal -->
+  <line x1="0" y1="560" x2="790" y2="560" class="trazofino" transform="translate(000, 000)"/>
+  <!-- separador vertical -->
+  <line x1="395" y1="000" x2="395" y2="1120" class="trazofino" transform="translate(000, 000)"/>
+
+  <g id="trazado00" transform="translate(0,0)">
+    <text x="52mm" y="18mm" id="txtTitulo" class = "heavy"
+      text-anchor="middle">Problema Nro.
+        <tspan dx="6" dy="0" id="nroProblema" >13</tspan>
+    </text>
+    <image href="images/problema_013.jpg" x="8.0mm" y="30mm" height="90mm" width="90mm"/>
+  </g>
+
+  <g id="trazado10" transform="translate(395,0)">
+    <text x="52mm" y="18mm" id="txtTitulo" class = "heavy"
+      text-anchor="middle">Problema Nro.
+        <tspan dx="6" dy="0" id="nroProblema" >14</tspan>
+    </text>
+    <image href="images/problema_014.jpg" x="8.0mm" y="30mm" height="90mm" width="90mm"/>
+  </g>
+
+
+  <g id="trazado01" transform="translate(0,560)">
+    <text x="52mm" y="18mm" id="txtTitulo" class = "heavy"
+      text-anchor="middle">Problema Nro.
+        <tspan dx="6" dy="0" id="nroProblema" >15</tspan>
+    </text>
+    <image href="images/problema_015.jpg" x="8.0mm" y="30mm" height="90mm" width="90mm"/>
+  </g>
+
+
+  <g id="trazado11" transform="translate(395,560)">
+    <text x="52mm" y="18mm" id="txtTitulo" class = "heavy"
+      text-anchor="middle">Problema Nro.
+        <tspan dx="6" dy="0" id="nroProblema" >16</tspan>
+    </text>
+    <image href="images/problema_016.jpg" x="8.0mm" y="30mm" height="90mm" width="90mm"/>
+  </g>
+
+
+</svg>

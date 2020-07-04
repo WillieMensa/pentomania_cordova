@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>PROBLEMAS PENTOMANIA</title>
+	<meta name="description" content="PENTOMANIA">
+	<meta name="keywords" content="Lógica, Rompecabezas, representación gráfica, Desarrollo,Sistemas de Representación,CAD 3D, dibujo tecnico,elipses,empalmes,geometria descriptiva, ingenio, proyecciones, vistas">
+
+</head>
+
+<body onload="init()">
+
+<div class="container">
+	<!-- Contenido de la pagina -->
+	<a name="TopOfPage"></a>
+
+	<div>
+		<button onclick="printDiv(false)">Imprimir juego</button>
+		<button onclick="otroJuego()">Otro juego</button>
+
+	</div>
+
+
+
+	<div class="imprimir" id="imprimir" style="background-color:#bdf" >
+
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width ="790" height= "1120"
+			id = "pagina">
+
+
+		<!-- Outline the SVG viewport. -->
+
+		<style>
+
+		@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+		@import url("https://fonts.googleapis.com/css?family=Bangers");
+		@import url("https://fonts.googleapis.com/css?family=Sriracha");
+		@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Pangolin');
+
+		//  @font-face { font-family: "Luckiest Guy"; src: url("https://fonts.googleapis.com/css?family=Luckiest+Guy"); }
+
+
+		@media print {
+			/* Aquí irían tus reglas CSS específicas para imprimir */
+
+			/*
+			.vertNP { 
+				font-family: 'Caveat Brush', cursive; 
+				font-size: 28px; fill:#026; 
+				font: bold; dominant-baseline: middle; text-anchor: middle;
+				display:none;
+			}
+		
+			body.resuelto .vertNP {
+			.vertNP { 
+				font-family: 'Caveat Brush', cursive; 
+				font-size: 28px; fill:#026; 
+				font: bold; dominant-baseline: middle; text-anchor: middle;
+			}
+
+			body.noresuelto 			.vertNP { 
+				font-family: 'Caveat Brush', cursive; 
+				font-size: 28px; fill:#026; 
+				font: bold; dominant-baseline: middle; text-anchor: middle;
+				display:none;
+			}
+
+		*/
+
+		} 
+
+		.trazofino { fill:white; stroke:#33f;stroke-width:1;opacity:1.0; }
+
+		.auxiliar { fill:white; stroke:#888;stroke-width:1;opacity:0.5; }
+		.marco { fill:white; stroke:#566721; stroke-width:10;opacity:1.0; }
+
+		.small { font-family: "Sriracha"; font-size: 12px; }
+		.normal { font-family: "Sriracha"; font-size: 16px; }
+		.valor { font-family: "Luckiest Guy"; font-size: 24px; fill:#333; font: bold; dominant-baseline: central; text-anchor: middle;}
+		.vert { font-family: 'Caveat Brush', cursive; font-size: 28px; fill:#026; font: bold; dominant-baseline: middle; text-anchor: middle;
+			visibility: visible;
+			}
+		.vertNP { 
+				font-family: 'Caveat Brush', cursive; 
+				font-size: 28px; fill:#026; 
+				font: bold; dominant-baseline: middle; text-anchor: middle;
+				display:none;
+			}
+
+		.valor_teorico { font-family: "Delius Unicase"; font: bold 20px sans-serif; }
+		.title { font: bold 20px sans-serif; }
+		.heavy { font-family: "Luckiest Guy"; font-size: 20px; }
+
+
+		.imprimir{
+		background: white;
+		margin-right: 200px;
+		margin-left: 200px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		max-width: 1000px;
+		}
+		.imprimir table{
+		max-width: 960px;
+		}
+
+
+		</style>
+
+
+
+		<rect width ="790" height= "1120" x="0" y="0" fill="#fff" class="trazofino"/>
+		<!-- separador horizontal -->
+		<line x1="0" y1="560" x2="790" y2="560" class="trazofino" transform="translate(000, 000)"/>
+		<!-- separador vertical -->
+		<line x1="395" y1="000" x2="395" y2="1120" class="trazofino" transform="translate(000, 000)"/>
+
+		<rect
+		width="320"
+		height="40"
+		x="40"
+		y="40"
+		rx="8.0"
+		ry="8.0"
+		style="fill:#677821"
+		id="rect4142" />
+
+		<text
+			x="195.0"
+			y="68.0"
+			id="text4144"
+			class = "heavy"
+			text-anchor="middle"
+			fill="#eee" >PENTOMANIA
+		</text>
+
+		<text x="40" y="80">
+				<tspan class="normal" x="40" dx="0" dy="20">Problema Nro. </tspan>
+				<tspan class="normal" dx="8" dy="0" id="nroProblema" class="valor" >0</text>
+		</text>
+
+
+		<!-- ahora el tablero -->
+		<rect width ="320" height= "320" x="0" y="0" fill="#fff" class="marco"transform="translate(040,150)"/>
+
+		<g id="R1" transform="translate(040,150)">
+
+			<!-- lineas horizontales que unen vertices (lados) -->
+			<line id='LH' x1="000" y1="000" x2="320" y2="000" class = "trazofino" transform="translate(000, 000)"/>
+			<use xlink:href="#LH" transform="translate(000, 040)"/>
+			<use xlink:href="#LH" transform="translate(000, 080)"/>
+			<use xlink:href="#LH" transform="translate(000, 120)"/>
+			<use xlink:href="#LH" transform="translate(000, 160)"/>
+			<use xlink:href="#LH" transform="translate(000, 200)"/>
+			<use xlink:href="#LH" transform="translate(000, 240)"/>
+			<use xlink:href="#LH" transform="translate(000, 280)"/>
+			<use xlink:href="#LH" transform="translate(000, 320)"/>
+
+
+			<!-- verticales -->
+			<line id='LV' x1="000" y1="000" x2="000" y2="320" class = "trazofino" transform="translate(000, 000)"/>
+			<use xlink:href="#LV" transform="translate(040, 000)"/>
+			<use xlink:href="#LV" transform="translate(080, 000)"/>
+			<use xlink:href="#LV" transform="translate(120, 000)"/>
+			<use xlink:href="#LV" transform="translate(160, 000)"/>
+			<use xlink:href="#LV" transform="translate(200, 000)"/>
+			<use xlink:href="#LV" transform="translate(240, 000)"/>
+			<use xlink:href="#LV" transform="translate(280, 000)"/>
+			<use xlink:href="#LV" transform="translate(320, 000)"/>
+																								 
+
+
+		</g>
+
+
+		<g id="GrillaA4" transform="translate(0 0)">
+		</g>
+
+
+
+	</svg>
+
+
+	</div>
+
+
+
+
+	<!-- inicio de los scripts -->
+	<script type="text/javascript">
+
+		const	
+			//	DEBUG = false;
+			DEBUG = true;
+
+		let nProblema = 123;
+
+
+		function init() {
+			if (DEBUG) { console.log("function init() beginnen Version 11");}
+			GenJuego("sum3x3A");
+			//	GenJuego("sum4x3A");
+			//	GenJuego("sum4x4A");
+			if (DEBUG)
+			{
+				console.log('dibujando grilla');
+				DibujaGrillaA4();
+			}
+		};
+
+		
+
+		function GenJuego( modGrilla)			//	genera un nuevo juego
+		{
+			//	la funciones para preparacion de nuevo juego
+			//	modGrilla: es el modelo de grila, filas columnas y variante
+			//	Identificacion de los modelos de grilla
+			//	sum3x3A
+			//	sum4*3A
+			//	sum4x4A
+
+			var aTemp = undefined,
+				i = undefined,
+				j = undefined,
+				aSumaPolig = [],	//	array con suma de los poligonos
+				aVertex = [],			//	para ubicar numeros aleatoriamente
+				nNum = undefined, //	
+				nFil = undefined, //	cantidad de filas
+				nCol = undefined	//	cantidad de columnas
+				//	aNumeros = [],	//	array con los numeros
+				//	aVertices = []		//	array con datos de vertices
+
+			switch(modGrilla) {
+				case "sum3x3A":
+					// code block
+					nFil = 3;
+					nCol = 3;
+					break;
+
+				default:
+					// code block
+			}
+
+			//	console.log( "nFil, nCol: " + nFil + ", " + nCol );
+
+			for ( i = 0; i < nCol; i++){
+				for ( j = 0; j < nFil; j++)
+				{
+					nNum = 1 + i + ( j * nCol );
+					aVertex.push(nNum);
+					//	console.log( "nNum, aVertex[i]: " + nNum + ", " + aVertex[i] );
+				}
+			}
+
+			//	shuffle the vertex
+			//	Scheitelpunkte vermischen
+			for(i=0; i< (nFil * nCol * 4); i++){
+				var from = Math.floor(Math.random()* nFil * nCol);
+				var to = Math.floor(Math.random()* nFil * nCol);
+				var tmp = aVertex[from];
+				aVertex[from] = aVertex[to];
+				aVertex[to] = tmp;
+				//	console.log( "from, to: " + from + ", " + to );
+			}
+
+			//	console.log("aVertex:" + aVertex );
+
+
+
+			////////////////////////////////////////////////////
+			//	colocar nro de problema
+
+			for ( var i=0;i<aSumaPolig.length ;i++ )
+			{
+				var str = "00" + i;
+				var res = str.substr(-2);
+				var textNode = undefined;
+
+				console.log( nroProblema + ', ' + nProblema);
+
+				svgTextElement = document.getElementById( 'nroProblema' );
+				//	console.log("sum3x3pos0"+i + "  -  " + "sum3x3pos0"+i)
+				//	console.log(svgTextElement)
+				textNode = svgTextElement.childNodes[0];
+				textNode.nodeValue = nProblema ;
+
+			}
+
+		}
+
+
+		function recorrerObjeto(objeto)
+		{
+			var respuesta="";
+			for (var i in objeto)
+			{
+				respuesta+=i+": "+objeto[i]+"<br>";
+			}
+			return respuesta
+		}
+
+
+
+		function DibujaGrillaA4() {
+			//	dibujar grilla A4 de fondo
+			var svg = document.getElementById('pagina');
+
+			const	aLinePos = [		//	coordenadas extremos de linea
+				[ 000, 100, 795, 100],	//	horizontales
+				[ 000, 200, 795, 200],
+				[ 000, 300, 795, 300],
+				[ 000, 400, 795, 400],
+				[ 000, 500, 795, 500],
+				[ 000, 600, 795, 600],
+				[ 000, 700, 795, 700],
+				[ 000, 800, 795, 800],
+				[ 000, 900, 795, 900],
+				[ 000,1000, 795,1000],
+				[ 000,1100, 795,1100],
+				[ 000,1200, 795,1200],
+				[ 100, 000, 100,1200],	//	verticales
+				[ 200, 000, 200,1200],
+				[ 300, 000, 300,1200],
+				[ 400, 000, 400,1200],
+				[ 500, 000, 500,1200],
+				[ 600, 000, 600,1200],
+				[ 700, 000, 700,1200],
+				[ 800, 000, 800,1200]
+			]
+
+			for (var i=0; i<aLinePos.length; i++ )
+			{
+				for (var j=0; j<aLinePos[i].length; j++ )
+				{
+					var lElement = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+					lElement.setAttributeNS(null, 'x1', aLinePos[i][0]);
+					lElement.setAttributeNS(null, 'y1', aLinePos[i][1]);
+					lElement.setAttributeNS(null, 'x2', aLinePos[i][2]);
+					lElement.setAttributeNS(null, 'y2', aLinePos[i][3]);
+					lElement.setAttributeNS(null, 'class', 'auxiliar');
+					//	console.log("lElement: " + lElement );
+					svg.appendChild(lElement);			
+				}
+				var tElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+				tElement.setAttributeNS(null, 'x', aLinePos[i][0]+4);
+				tElement.setAttributeNS(null, 'y', aLinePos[i][1]+12);
+				tElement.setAttributeNS(null, 'class', "small");
+				var txt = document.createTextNode( aLinePos[i][0] + aLinePos[i][1] );
+				tElement.appendChild(txt);
+				svg.appendChild(tElement);		
+				//	console.log(tElement);	
+			}
+
+		}
+
+
+		function printDiv() {
+			var objeto=document.getElementById('imprimir');
+			//obtenemos el objeto a imprimir
+			var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
+			ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+			ventana.document.close();  //cerramos el documento
+			ventana.print();  //imprimimos la ventana
+			ventana.close();  //cerramos la ventana
+		}
+
+		function otroJuego() {
+		  location.reload();
+		}
+
+
+
+	</script>
+
+	<hr class="grosa">
+	<!-- fin contenido -->
+</div>
+
+</body>
+</html>
+

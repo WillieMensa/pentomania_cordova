@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+	<meta charset="UTF-8">
+	<!-- Esquema de pagina basdo en https://ed.team/blog/introduccion-grid-css	-->
+	<title>Imagen sobre gradiente</title> 
+
+	
+<style>
+
+	@import url("https://fonts.googleapis.com/css?family=Titan+One");
+
+	body {
+		background: linear-gradient(to bottom, gray, white);
+
+		/*	font-family:Arial, Helvetica, sans-serif;	*/
+		font-family: "Titan One", san-serif;
+	}
+
+
+	html {
+		box-sizing: border-box;
+		font-family: "Titan One", san-serif;
+		font-size: 12px;
+		color:#666;
+		
+		/* CSS3 Radial Gradients 
+		background-image:-moz-radial-gradient(center -100px 45deg, circle farthest-corner, #444 150px, #111 600px);
+		background-image:-webkit-gradient(radial, 50% 0, 50, 50% 0, 400, from(#468), to(#111));
+		*/
+
+		font-family:Arial, Helvetica, sans-serif;
+	}
+
+
+	/*
+		https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids
+		vh:	Equal to 1% of the height of the viewport's initial containing block. */
+	.app {
+	  min-height: 100vh;	/*  */
+		margin: 20rem; 
+	}
+
+	div {
+		text-align: center;
+	}
+
+</style>
+
+
+</head>
+
+<body>
+
+	<article class="app" id="pantaIni">
+		<div >
+			<img src="ic_launcher_foreground.png" width="256" height="256" border="0" alt="">
+		</div>
+
+	</article>
+
+</body>
+
+</html>

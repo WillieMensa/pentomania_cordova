@@ -1,0 +1,104 @@
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 790 1120"
+      id = "pagina">
+      <style>
+
+      .trazofino { fill:white; stroke:#33f;stroke-width:1;opacity:1.0; }
+      .auxiliar { fill:white; stroke:#888;stroke-width:1;opacity:0.5; }
+      .marco { fill:white; stroke:#566721; stroke-width:10; opacity:1.0; }
+
+      .small { font-family: "Sriracha"; font-size: 12px; }
+      .normal { font-family: "Sriracha"; font-size: 16px; }
+      .valor { font-family: "Luckiest Guy"; font-size: 24px; fill:#333; font: bold; dominant-baseline: central; text-anchor: middle;}
+
+      .title { font: bold 20px sans-serif; }
+      .heavy { font-family: "Luckiest Guy"; font-size: 20px; }	<!-- fill: #888 } -->
+
+
+      .imprimir{
+        background: white;
+        margin-right: 100px;
+        margin-left: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        max-width: 1000px;
+      }
+      .imprimir table{
+        max-width: 960px;
+      }
+
+      </style>
+
+
+
+      <rect width ="790" height= "1120" x="0" y="0" fill="#fff" class="trazofino"/>
+      <!-- separador horizontal -->
+      <line x1="0" y1="560" x2="790" y2="560" class="trazofino" transform="translate(000, 000)"/>
+      <!-- separador vertical -->
+      <line x1="395" y1="000" x2="395" y2="1120" class="trazofino" transform="translate(000, 000)"/>
+
+      <text
+        x="195.0"
+        y="68.0"
+        id="text4144"
+        class = "heavy"
+        text-anchor="middle"
+        >PENTOMANIA
+      </text>
+
+      <text x="40" y="80">
+          <tspan class="normal" x="40" dx="0" dy="20">Problema Nro. </tspan>
+          <tspan dx="8" dy="0" id="nroProblema" class="valor">0</tspan>
+      </text>
+
+
+      <!-- ahora el tablero -->
+      <rect width ="330" height= "330" x="0" y="0" fill="#fff" class="marco" transform="translate(035,145)"/>
+
+      <g id="R1" transform="translate(040,150)">
+
+        <!-- lineas horizontales que unen vertices (lados) -->
+        <line id='LH' x1="000" y1="000" x2="320" y2="000" class = "trazofino" transform="translate(000, 000)"/>
+        <use href='#LH' transform="translate(000, 040)"/>
+        <use href="#LH" transform="translate(000, 080)"/>
+        <use href="#LH" transform="translate(000, 120)"/>
+        <use href="#LH" transform="translate(000, 160)"/>
+        <use href="#LH" transform="translate(000, 200)"/>
+        <use href="#LH" transform="translate(000, 240)"/>
+        <use href="#LH" transform="translate(000, 280)"/>
+        <use href="#LH" transform="translate(000, 320)"/>
+
+
+        <!-- verticales -->
+        <line id='LV' x1="000" y1="000" x2="000" y2="320" class = "trazofino" transform="translate(000, 000)"/>
+        <use href="#LV" transform="translate(040, 000)"/>
+        <use href="#LV" transform="translate(080, 000)"/>
+        <use href="#LV" transform="translate(120, 000)"/>
+        <use href="#LV" transform="translate(160, 000)"/>
+        <use href="#LV" transform="translate(200, 000)"/>
+        <use href="#LV" transform="translate(240, 000)"/>
+        <use href="#LV" transform="translate(280, 000)"/>
+        <use href="#LV" transform="translate(320, 000)"/>
+
+      </g>
+
+      <!-- modelo definicion de poliomino -->
+      <g id="L" fill="#888" stroke-width="0.25" stroke="#000000"  transform="translate(100, 600)">
+         <rect width="40" height="40" x="0"   y="0"  />
+         <rect width="40" height="40" x="0"   y="40"  />
+         <rect width="40" height="40" x="40"   y="40"  />
+         <rect width="40" height="40" x="80"   y="40"  />
+         <polygon fill="none" stroke-width="2" points=" 0, 0
+                                                        0, 80
+                                                       120, 80
+                                                       120, 40
+                                                       40, 40
+                                                        40, 0
+                                                        0,  0" />
+      </g>
+
+
+    </svg>
+

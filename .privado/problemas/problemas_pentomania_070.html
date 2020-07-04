@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>PROBLEMAS PENTOMANIA</title>
+	<meta name="description" content="PENTOMANIA">
+	<meta name="keywords" content="Lógica, Rompecabezas, representación gráfica, Desarrollo,Sistemas de Representación,CAD 3D, dibujo tecnico,elipses,empalmes,geometria descriptiva, ingenio, proyecciones, vistas">
+
+
+	<style>
+		body {
+			background: #aef;
+			margin-right: 100px;
+			padding-right: 20MM;
+			max-width: 205MM;
+
+		}
+
+	</style>
+
+</head>
+
+<body onload="init()">
+
+<div class="container">
+	<!-- Contenido de la pagina -->
+	<a name="TopOfPage"></a>
+
+	<div>
+		<h1>Impresion problemas pentomania</h1>
+
+		<button onclick="printDiv(false)">Imprimir documento</button>
+		<p>&nbsp;</p>
+
+	</div>
+
+
+	<div class="imprimir" id="imprimir" style="background-color:#fff" >
+
+		<object id="svg-object" data="hoja_01.svg" type="image/svg+xml"></object>
+		<object id="svg-object" data="hoja_02.svg" type="image/svg+xml"></object>
+
+		<!-- salto de pagina -->
+		<!-- <p style="page-break-before: always"> -->
+
+
+	</div>
+
+
+
+	<!-- inicio de los scripts -->
+	<script type="text/javascript">
+
+		const	
+			//	DEBUG = false;
+			DEBUG = true;
+
+
+
+		function init() {
+
+		};
+
+		
+
+
+		function printDiv() {
+			var objeto=document.getElementById('imprimir');
+			//obtenemos el objeto a imprimir
+			var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
+			ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+			ventana.document.close();  //cerramos el documento
+			ventana.print();  //imprimimos la ventana
+			ventana.close();  //cerramos la ventana
+		}
+
+
+
+	</script>
+
+	<hr class="grosa">
+	<!-- fin contenido -->
+</div>
+
+
+</body>
+</html>
+

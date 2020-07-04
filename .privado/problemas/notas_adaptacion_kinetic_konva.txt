@@ -1,0 +1,33 @@
+ADAPTACION KINETIC JS A KONVA JS
+
+Polygon	---> line
+
+
+//	reemplazo de Konva.Polygon({
+//	fixedPoly = new Konva.Polygon({
+//		x: startX,
+//		y: startY,
+//		offset: [ offsetX * BLOCK_CELL_SIZE, offsetY *  BLOCK_CELL_SIZE ],
+
+//		points: poly,
+//		fill: FIXED_BLOCK_COLOR,
+//		stroke: FIXED_BORDER_COLOR,
+//		strokeWidth: 2
+//	});
+
+fixedPoly = new Konva.Line({
+	points: poly,
+	fill: FIXED_BLOCK_COLOR,
+	stroke: FIXED_BORDER_COLOR,
+	strokeWidth: 2,
+	closed: true
+});
+fixedPoly.move({
+x: startX,
+y: startY
+});
+
+
+
+Shape		
+

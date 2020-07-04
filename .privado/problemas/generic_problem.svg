@@ -1,0 +1,42 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 790 1120"
+  id = "pagina">
+
+  <style>
+
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+    @import url("https://fonts.googleapis.com/css?family=Roboto:700");
+
+    .small { font-family: "Roboto"; font-size: 12px; }
+    .heavy { font-family: "Luckiest Guy"; font-size: 20px; }	<!-- fill: #888 } -->
+
+  </style>
+
+  <!-- definicion para utilizar cuando sea necesaria -->
+
+    <g id="trazado" transform="translate(0,0)">
+      <text
+        x="52mm"
+        y="18mm"
+        id="txtTitulo"
+        class = "heavy"
+        text-anchor="middle">Problema Nro.
+          <tspan dx="6" dy="0" id="nroProblema" >0</tspan>
+      </text>
+
+      <!-- ahora el tablero -->
+      <image id="imgProblema" href="images/problema_001.jpg" x="8.0mm" y="30mm" height="90mm" width="90mm"/>
+
+      <text
+        x="52mm"
+        y="135mm"
+        id="txtPie"
+        class = "small"
+        text-anchor="middle">PENTOMANIA by Willie Verger Clever Games
+      </text>
+
+
+    </g>
+
+</svg>

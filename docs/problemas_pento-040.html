@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>PROBLEMAS PENTOMANIA</title>
+	<meta name="description" content="PENTOMANIA">
+	<meta name="keywords" content="Lógica, Rompecabezas, representación gráfica, Desarrollo,Sistemas de Representación,CAD 3D, dibujo tecnico,elipses,empalmes,geometria descriptiva, ingenio, proyecciones, vistas">
+
+</head>
+
+<body onload="init()">
+
+<div class="container">
+	<!-- Contenido de la pagina -->
+	<a name="TopOfPage"></a>
+
+	<div>
+		<h1>Impresion problemas pentomania</h1>
+
+		<button onclick="printDiv(false)">Imprimir juego</button>
+		<button onclick="otroJuego()">Otro juego</button>
+
+	</div>
+
+
+
+	<div class="imprimir" id="imprimir" style="background-color:#bdf" >
+
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width ="790" height= "1120"
+			id = "pagina">
+
+
+		<!-- Outline the SVG viewport. -->
+
+		<style>
+
+		@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+		@import url("https://fonts.googleapis.com/css?family=Bangers");
+		@import url("https://fonts.googleapis.com/css?family=Sriracha");
+
+		@media print {
+			/* Aquí irían tus reglas CSS específicas para imprimir */
+		}
+	
+		.trazofino { fill:white; stroke:#33f;stroke-width:1;opacity:1.0; }
+
+		.auxiliar { fill:white; stroke:#888;stroke-width:1;opacity:0.5; }
+		.marco { fill:white; stroke:#566721; stroke-width:10;opacity:1.0; }
+
+		.small { font-family: "Sriracha"; font-size: 12px; }
+		.normal { font-family: "Sriracha"; font-size: 16px; }
+		.valor { font-family: "Luckiest Guy"; font-size: 24px; fill:#333; font: bold; dominant-baseline: central; text-anchor: middle;}
+
+		.title { font: bold 20px sans-serif; }
+		.heavy { font-family: "Luckiest Guy"; font-size: 20px; }	<!-- fill: #888 } -->
+
+
+		.imprimir{
+		background: white;
+		margin-right: 100px;
+		margin-left: 100px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		max-width: 1000px;
+		}
+		.imprimir table{
+		max-width: 960px;
+		}
+
+
+		</style>
+
+
+
+		<rect width ="790" height= "1120" x="0" y="0" fill="#fff" class="trazofino"/>
+		<!-- separador horizontal -->
+		<line x1="0" y1="560" x2="790" y2="560" class="trazofino" transform="translate(000, 000)"/>
+		<!-- separador vertical -->
+		<line x1="395" y1="000" x2="395" y2="1120" class="trazofino" transform="translate(000, 000)"/>
+
+		<text
+			x="195.0"
+			y="68.0"
+			id="text4144"
+			class = "heavy"
+			text-anchor="middle"
+			>PENTOMANIA
+		</text>
+
+		<text x="40" y="80">
+				<tspan class="normal" x="40" dx="0" dy="20">Problema Nro. </tspan>
+				<tspan class="normal" dx="8" dy="0" id="nroProblema" class="valor" >0</text>
+		</text>
+
+
+		<!-- ahora el tablero -->
+		<rect width ="330" height= "330" x="0" y="0" fill="#fff" class="marco" transform="translate(035,145)"/>
+
+		<g id="R1" transform="translate(040,150)">
+
+			<!-- lineas horizontales que unen vertices (lados) -->
+			<line id='LH' x1="000" y1="000" x2="320" y2="000" class = "trazofino" transform="translate(000, 000)"/>
+			<use xlink:href="#LH" transform="translate(000, 040)"/>
+			<use xlink:href="#LH" transform="translate(000, 080)"/>
+			<use xlink:href="#LH" transform="translate(000, 120)"/>
+			<use xlink:href="#LH" transform="translate(000, 160)"/>
+			<use xlink:href="#LH" transform="translate(000, 200)"/>
+			<use xlink:href="#LH" transform="translate(000, 240)"/>
+			<use xlink:href="#LH" transform="translate(000, 280)"/>
+			<use xlink:href="#LH" transform="translate(000, 320)"/>
+
+
+			<!-- verticales -->
+			<line id='LV' x1="000" y1="000" x2="000" y2="320" class = "trazofino" transform="translate(000, 000)"/>
+			<use xlink:href="#LV" transform="translate(040, 000)"/>
+			<use xlink:href="#LV" transform="translate(080, 000)"/>
+			<use xlink:href="#LV" transform="translate(120, 000)"/>
+			<use xlink:href="#LV" transform="translate(160, 000)"/>
+			<use xlink:href="#LV" transform="translate(200, 000)"/>
+			<use xlink:href="#LV" transform="translate(240, 000)"/>
+			<use xlink:href="#LV" transform="translate(280, 000)"/>
+			<use xlink:href="#LV" transform="translate(320, 000)"/>
+																								 
+		</g>
+
+<!-- modelo definicion de poliomino -->
+<g id="L" fill="#888" stroke-width="0.25" stroke="#000000"  transform="translate(100, 600)">
+   <rect width="40" height="40" x="0"   y="0"  />
+   <rect width="40" height="40" x="0"   y="40"  />
+   <rect width="40" height="40" x="40"   y="40"  />
+   <rect width="40" height="40" x="80"   y="40"  />
+   <polygon fill="none" stroke-width="2" points=" 0, 0
+                                                  0, 80
+                                                 120, 80
+                                                 120, 40
+                                                 40, 40
+                                                  40, 0
+                                                  0,  0" />
+</g>
+
+
+	</svg>
+
+
+	</div>
+
+
+
+	<!-- el proximo script contiene const problemas, array en formato json -->
+	<script type="text/javascript" src="problemas.json"></script>
+	<script src="polyomino4.js"></script>
+
+
+	<!-- inicio de los scripts -->
+	<script type="text/javascript">
+
+		const	
+			//	DEBUG = false;
+			DEBUG = true;
+
+		var nProblema	= 1;
+		var wTetromGroup;		//	vector con datos de tetrominos. Uno va en posición fija
+		var	wPolyTetrom;		//	datos para colocacion en pantalla
+		var	nTetromId	= 3;	//	identificador del tetromino fijo a colocar en el tablero
+		var wTetromPos = {x:2,y:2};	//	posicion del tetromino fijo
+
+
+
+		function init() {
+			//	if (DEBUG){
+			//		console.log('dibujando grilla');
+			//		DibujaGrillaA4();
+			//	}
+
+			wTetromGroup = polyomino4.blockGroup;		//	leer lista de problemas
+
+			GenProblema();
+
+		};
+
+		
+		function recorrerObjeto(objeto)
+		{
+			var respuesta="";
+			for (var i in objeto)
+			{
+				respuesta+=i+": "+objeto[i]+"<br>";
+			}
+			return respuesta
+		}
+
+
+
+		function DibujaGrillaA4() {
+			//	dibujar grilla A4 de fondo
+			var svg = document.getElementById('pagina');
+
+			const	aLinePos = [		//	coordenadas extremos de linea
+				[ 000, 100, 795, 100],	//	horizontales
+				[ 000, 200, 795, 200],
+				[ 000, 300, 795, 300],
+				[ 000, 400, 795, 400],
+				[ 000, 500, 795, 500],
+				[ 000, 600, 795, 600],
+				[ 000, 700, 795, 700],
+				[ 000, 800, 795, 800],
+				[ 000, 900, 795, 900],
+				[ 000,1000, 795,1000],
+				[ 000,1100, 795,1100],
+				[ 000,1200, 795,1200],
+				[ 100, 000, 100,1200],	//	verticales
+				[ 200, 000, 200,1200],
+				[ 300, 000, 300,1200],
+				[ 400, 000, 400,1200],
+				[ 500, 000, 500,1200],
+				[ 600, 000, 600,1200],
+				[ 700, 000, 700,1200],
+				[ 800, 000, 800,1200]
+			]
+
+			for (var i=0; i<aLinePos.length; i++ )
+			{
+				for (var j=0; j<aLinePos[i].length; j++ )
+				{
+					var lElement = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+					lElement.setAttributeNS(null, 'x1', aLinePos[i][0]);
+					lElement.setAttributeNS(null, 'y1', aLinePos[i][1]);
+					lElement.setAttributeNS(null, 'x2', aLinePos[i][2]);
+					lElement.setAttributeNS(null, 'y2', aLinePos[i][3]);
+					lElement.setAttributeNS(null, 'class', 'auxiliar');
+					//	console.log("lElement: " + lElement );
+					svg.appendChild(lElement);			
+				}
+				var tElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+				tElement.setAttributeNS(null, 'x', aLinePos[i][0]+4);
+				tElement.setAttributeNS(null, 'y', aLinePos[i][1]+12);
+				tElement.setAttributeNS(null, 'class', "small");
+				var txt = document.createTextNode( aLinePos[i][0] + aLinePos[i][1] );
+				tElement.appendChild(txt);
+				svg.appendChild(tElement);		
+				//	console.log(tElement);	
+			}
+
+		}
+
+
+		function printDiv() {
+			var objeto=document.getElementById('imprimir');
+			//obtenemos el objeto a imprimir
+			var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
+			ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+			ventana.document.close();  //cerramos el documento
+			ventana.print();  //imprimimos la ventana
+			ventana.close();  //cerramos la ventana
+		}
+
+		function otroJuego() {
+		  location.reload();
+		}
+
+	function GenProblema() {
+		//	nProblema = 1;
+
+		wTetromPos = { x:problemas[nProblema].posX, y:problemas[nProblema].posY };	//	posicion del tetromino fijo
+		var str = "LSIOT";
+		nTetromId	= str.indexOf(problemas[nProblema].pieza);
+
+		if (DEBUG)	{
+			console.log('contenido de problemas[nProblema] \n'+
+			mostrarPropiedades(problemas[nProblema], 'problemas[nProblema]' ) );
+			console.log('wTetromPos, nTetromId: ' +	wTetromPos.x +', ' + wTetromPos.y +', ' + nTetromId	);
+		}
+
+		wAgregatetrominoFijo( wTetromPos );
+
+
+	}
+
+
+/*
+	para crear tetrominos desde js algo similar a esto
+		var polyElement_L = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+		lElement.setAttributeNS(null, 'x1', aLinePos[i][0]);
+		lElement.setAttributeNS(null, 'y1', aLinePos[i][1]);
+		lElement.setAttributeNS(null, 'x2', aLinePos[i][2]);
+		lElement.setAttributeNS(null, 'y2', aLinePos[i][3]);
+		lElement.setAttributeNS(null, 'class', 'auxiliar');
+		//	console.log("lElement: " + lElement );
+
+<!-- modelo definicion de poliomino -->
+<g id="L" fill="#888" stroke-width="0.25" stroke="#000000"  transform="translate(100, 600)">
+   <rect width="40" height="40" x="0"   y="0"  />
+   <rect width="40" height="40" x="0"   y="40"  />
+   <rect width="40" height="40" x="40"   y="40"  />
+   <rect width="40" height="40" x="80"   y="40"  />
+   <polygon fill="none" stroke-width="2" points=" 0, 0
+                                                  0, 80
+                                                 120, 80
+                                                 120, 40
+                                                 40, 40
+                                                  40, 0
+                                                  0,  0" />
+</g>
+
+
+		svg.appendChild(lElement);			
+
+*/
+
+	function wAgregatetrominoFijo(pos)	// coloca tetromino fijo
+	//	id: identifica el tetromino fijo. No es necesario porque cargo un único tetromino
+	//	pos: posición del tetromino en el tablero.
+	//	esta funcion debe tomar cuadrómino de una tabla que vincule
+	//	nro de problema con cuadrómino a colocar y posición
+	{
+		if (DEBUG)	{		console.log("Ingresando a wAgregatetrominoFijo(pos)" +
+			"\npos.x: " + pos.x +
+			"\npos.y: " + pos.y +
+			"\nwTetromGroup[nTetromId].blockStyle[0]: " + wTetromGroup[nTetromId].blockStyle[0][0] );
+		}
+
+		var fixedPoly;
+		var polyId =0;
+
+			//	block recibirá la posición relativa de cada cuadradito
+			//	usamos blockStyle[0] porque es el único definido. Diferencia con pentominos
+			//	var block = dupOpBlock(wTetromGroup[nTetromId].blockStyle[0], 0, 0);
+			var block = wTetromGroup[nTetromId].blockStyle[0];
+
+			if (DEBUG){
+			console.log( mostrarPropiedades(block, 'block'));
+			//		console.log( mostrarPropiedades(block.0, 'block.0'));
+			//		console.log( mostrarPropiedades(block.1, 'block.1'));
+			//		console.log( mostrarPropiedades(block.2, 'block.2'));
+			//		console.log( mostrarPropiedades(block.3, 'block.3'));
+			}
+			
+	}
+
+
+
+	//-------------------------------------------------
+	//	funciones exclusivas para depuracion
+	//-------------------------------------------------
+	function mostrarPropiedades(objeto, nombreObjeto) {
+		//	https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos
+
+		var resultado = "";
+		for (var i in objeto) {
+			//	if (objeto.hasOwnProperty(i)) {
+				resultado += nombreObjeto + "." + i + " = " + objeto[i] + "\n";
+			//	}
+		}
+		return resultado;
+	}
+
+
+	</script>
+
+	<hr class="grosa">
+	<!-- fin contenido -->
+</div>
+
+</body>
+</html>
+
