@@ -1,13 +1,11 @@
-﻿/*	=============================================================================
+﻿/**************************************************
 	Pentomino Puzzle
 
 	include files: polyomino5.js, polySolution.js, animate.js, polyDemo.js
 
-	=============================================================================
-
+	************************************************
 	Ejemplos de botones creados en javascript:
 		file:///E:/Dropbox/GitHub/aca_pruebas/javascript-create-button/dist/index.html
-
 
 	OBSERVACIONES
 
@@ -1340,7 +1338,7 @@ function getPositionOfPoly(polyX, polyY, offsetX, offsetY)
 {
 	var boardX, boardY;
 	var precision = 10;		//	(Precision)
-	var rx = -1,	ry = -1;
+	//	var rx = -1,	ry = -1;		//	no se usa. borrame
 
 	for(var x = 0; x < SCREEN_BOARD_X; x++) {
 		boardX = boardStartX + x * BLOCK_CELL_SIZE;
