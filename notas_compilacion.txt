@@ -63,6 +63,7 @@ Generando par de claves RSA de 2.048 bits para certificado autofirmado (SHA256wi
 [Almacenando pentomania.keystore]
 
 
+
 En phonegap build
 name/title	pentomania
 alias		pentomania

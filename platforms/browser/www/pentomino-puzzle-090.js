@@ -1,106 +1,11 @@
-﻿/*	=============================================================================
+﻿/**************************************************
 	Pentomino Puzzle
-
-	#### version     = "0.8.5"	- 4/12/2019
-	Cambio fonts, tipo y tamaño
-	Separacion botones
-	Ajuste de textos en ayudas
-
-	#### version     = "0.8.3"	- 3/12/2019
-	Intento corregir observaciones de google
-		Webviews
-		We don’t allow apps whose primary purpose is to provide a webview of a website, 
-		regardless of ownership, or to aggregate content that does not belong to the developer.
-
-
-
-	#### version     = "0.8.2"	- 2/12/2019
-	modificacion de boton proximo; funcionalidad y ubicacion
-	tamaño de letras en seleccion de problema
-	tamaño de letras en ayuda y acercade
-
-
-
-	#### version     = "0.8.1"	- 30/10/2019
-	Correcciones sugeridas por Mensanos rosarinos
-	Mejora en la seleccion del nro de problema
-	Correccion boton proximo en pantallas touch
-	Ajuste para que nro problema avance correctamente
-	Posición inicial de pentominos
-
-
-	#### version     = "0.7.0 / 0.7.2"	- 4/10/2019
-	Multilanguage y correcciones
-
-
-	#### version     = "0.6.8"	- 22/9/2019
-	Completando pantallas ayuda y acerca de
-
-	#### version     = "0.6.70"	- 16/9/2019
-	Depuracion archivo. Eliminar codigo innecesario
-
-	#### version     = "0.6.66"	- 15/9/2019
-	Ajusto para la version de API 28
-
-	#### version     = "0.6.65"	- 23/8/2019
-	Retomo la determinacion de variables para pantalla original (que permitia mover en pantallas chicas)
-	Abandono el uso de escalas Css
-
-	#### version     = "0.6.64"	- 23/8/2019
-	Esta version no funciona en pantallas chicas. 
-	Podria ser poor el uso de escalas segun tamaño de pantalla
-
-	#### version     = "0.6.63"	- 22/8/2019
-	tratando de corregir no desplazamiento de pentominos en Android
-
-	#### version     = "0.6.62"	- 21/8/2019
-	Detecte error en Android.
-	Corrigiendo proporciones
-
-	#### version     = "0.6.61"	- 18/8/2019
-	Cambio estrategia. Ahora medidas fijas presentadas segun la escala detectada.
-
-
-	#### version     = "0.6.6"	- 18/8/2019
-	antes de subir a github
-
-	#### version     = "0.6.42"	- 18/8/2019
-	Tratamiento de adaptacion a pantallas de diferente tamaño mediante CSS
-	transform: scale(escalax, escala y) 
-
-	#### version     = "0.6.41"	- 16/8/2019
-	Reinicio a partir de esta version para intentar otra 
-	tecnica de ajuste a diferentes medidas de pantalla.
-
-
-	#### version     = "0.6.4"	-	19/7/2019
-	El uso de escala para los layers no me funciona.
-	Reintento con tres o cuatro medidas alternativas de pantallas.
-
-
-	#### version     = "0.6.3"	-	19/7/2019
-	cuidar las proporciones en todo tamaño de pantalla
-	Pruebo una tecnica diferente para mantener proporciones; presento para 
-	una pantalla base determinada y segun las medidas reales aplico escala.
-
-
-	#### version     = "0.6.2"	-	8/7/2019
-	agrupar la preparacion de botones en una funcion: haceBotones()
-	incorporacion de seleccion de diferentes problemas
-
-
-	#### version     = "0.6.1"	-	7/7/2019
-	Separacion de funcionalidades en archivos individuales
-
-	ajustes.js
 
 	include files: polyomino5.js, polySolution.js, animate.js, polyDemo.js
 
-	=============================================================================
-
+	************************************************
 	Ejemplos de botones creados en javascript:
 		file:///E:/Dropbox/GitHub/aca_pruebas/javascript-create-button/dist/index.html
-
 
 	OBSERVACIONES
 
@@ -116,7 +21,7 @@
 //=========
 // define
 //=========
-const versionString="0.8.51"			//	lleva el numero de version actual
+const versionString="0.9.0"			//	lleva el numero de version actual
 
 //-------------------------------------
 //	https://www.w3schools.com/colors/colors_picker.asp
@@ -1433,7 +1338,7 @@ function getPositionOfPoly(polyX, polyY, offsetX, offsetY)
 {
 	var boardX, boardY;
 	var precision = 10;		//	(Precision)
-	var rx = -1,	ry = -1;
+	//	var rx = -1,	ry = -1;		//	no se usa. borrame
 
 	for(var x = 0; x < SCREEN_BOARD_X; x++) {
 		boardX = boardStartX + x * BLOCK_CELL_SIZE;

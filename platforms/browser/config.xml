@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ar.com.ingverger.pentomania" version="0.8.5" versionCode="0805" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ar.com.ingverger.pentomania" version="0.9.0" versionCode="0900" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PENTOMANIA</name>
     <description>
 		Pentomania Puzzle is a one player game. An opportunity for mental exercise and fun at the same time.

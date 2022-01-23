@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "816929371832",
+    "project_id": "httpsgifted-spence-636cb0netli",
+    "storage_bucket": "httpsgifted-spence-636cb0netli.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816929371832:android:6bd7a5f573a42b6267664d",
+        "android_client_info": {
+          "package_name": "ar.com.ingverger.pentomania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816929371832-qibt98cmdkdbgcl3nmsi1u57b6ddfnsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuL5YWCo6jqdyi-mwqYOb_-qboIyPjLQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816929371832-qibt98cmdkdbgcl3nmsi1u57b6ddfnsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
